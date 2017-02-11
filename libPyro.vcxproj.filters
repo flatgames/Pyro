@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Pyro\Pyro.h" />
+    <ClInclude Include="Pyro\Animations\ActionBuilder.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Animations\AnimationUtils.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Animations\RepeatBuilder.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Animations\ResizeTo.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Animations\SequenceBuilder.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Animations\SpawnBuilder.h">
+      <Filter>Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\InkButton.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\InkPaper.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\Paper.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\RaisedButton.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\Helpers\BatchedNinePatchSprite.h">
+      <Filter>Components\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\Helpers\MoverButton.h">
+      <Filter>Components\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\Helpers\NormalRectangle.h">
+      <Filter>Components\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\Helpers\RoundedRectangle.h">
+      <Filter>Components\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Shadow\Blur.h">
+      <Filter>Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Shadow\ShadowConfig.h">
+      <Filter>Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Shadow\ShadowLayer.h">
+      <Filter>Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Shadow\ShadowSprite.h">
+      <Filter>Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Common.h" />
+    <ClInclude Include="Pyro\Components\PaperMenu.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Components\PaperDialog.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Pyro\Pyro.UI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shadow">
+      <UniqueIdentifier>{7d1510a9-3b24-4bb6-838e-2a7979a4eeb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animations">
+      <UniqueIdentifier>{edacb4e4-428b-45bf-bc32-c636c1189bd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{e6e4c959-8d1d-49e7-867a-f8dfab8a9689}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Helpers">
+      <UniqueIdentifier>{5c3572a5-4051-4444-98fc-1d27ed5aaa41}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Pyro\Animations\ActionBuilder.cpp">
+      <Filter>Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Animations\AnimationUtils.cpp">
+      <Filter>Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Animations\ResizeTo.cpp">
+      <Filter>Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\InkButton.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\InkPaper.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\Paper.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\RaisedButton.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\Helpers\BatchedNinePatchSprite.cpp">
+      <Filter>Components\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\Helpers\MoverButton.cpp">
+      <Filter>Components\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\Helpers\NormalRectangle.cpp">
+      <Filter>Components\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\Helpers\RoundedRectangle.cpp">
+      <Filter>Components\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Shadow\Blur.cpp">
+      <Filter>Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Shadow\ShadowLayer.cpp">
+      <Filter>Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Shadow\ShadowSprite.cpp">
+      <Filter>Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Common.cpp" />
+    <ClCompile Include="Pyro\Components\PaperMenu.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Pyro\Components\PaperDialog.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pyro\Pyro.Animations.h" />
+  </ItemGroup>
+</Project>
