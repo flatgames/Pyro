@@ -38,13 +38,11 @@ namespace Pyro
 
 				auto action = Spawn::create(
 					Sequence::create(
-					FadeTo::create(0.1f, 48),
-					FadeOut::create(0.3f),
-					CallFunc::create([this](void)
-				{
-					this->frame->unscheduleUpdate();
-				}),
-					nullptr),
+						FadeTo::create(0.1f, 48),
+						FadeOut::create(0.3f),
+						CallFunc::create(std::bind(&Node::unscheduleUpdate, this->frame)),
+						Hide::create(),
+						nullptr),
 					EaseQuadraticActionOut::create(ScaleTo::create(0.4f, this->circleDestScale)),
 					MoveTo::create(0.4f, Vec2(this->frame->getContentSize().width / 2, this->frame->getContentSize().height / 2)),
 					nullptr);
@@ -59,6 +57,7 @@ namespace Pyro
 				circle->setOpacity(0);
 				circle->setScale(this->circleSrcScale);
 				circle->setPosition(localPoint);
+				circle->setVisible(true);
 				circle->runAction(action);
 			}
 
@@ -97,6 +96,7 @@ namespace Pyro
 					actionFocused->setTag(tagSurfaceFocused);
 
 					surface->stopActionByTag(tagSurfaceUnfocused); //if any
+					surface->setVisible(true);
 					surface->setOpacity(0);
 					surface->runAction(actionFocused);
 				}
@@ -114,9 +114,11 @@ namespace Pyro
 				if (actionUnfocused == nullptr)
 				{
 					if (this->remainingAnimationTime > 0.1f)
-						actionUnfocused = Sequence::createWithTwoActions(
+						actionUnfocused = Sequence::create(
 						FadeTo::create(this->remainingAnimationTime - 0.1f, RECT_OPACITY),
-						FadeOut::create(0.3f));
+						FadeOut::create(0.3f),
+						Hide::create(),
+						nullptr);
 					else
 						actionUnfocused = FadeOut::create(0.1f);
 
@@ -195,6 +197,7 @@ namespace Pyro
 					SpriteFrameCache::getInstance()->addSpriteFrame(spriteFrame, CIRCLE_FILENAME);
 				}
 				protocol.circle = Sprite::createWithSpriteFrame(spriteFrame);
+				protocol.circle->setVisible(false);
 				protocol.circle->setOpacity(0);
 				this->addChild(protocol.circle, 1);
 
@@ -204,6 +207,7 @@ namespace Pyro
 				protocol.circleDestScale = sqrtf(size.width * size.width + size.height * size.height) / protocol.circle->getContentSize().width;
 
 				protocol.surface = Floreto::UIUtils::createRectangle(size.width, size.height, Color3B::WHITE);
+				protocol.surface->setVisible(false);
 				protocol.surface->setOpacity(0);
 				protocol.surface->setPosition(size.width / 2, size.height / 2);
 				this->addChild(protocol.surface, 0);
@@ -277,6 +281,7 @@ namespace Pyro
 					SpriteFrameCache::getInstance()->addSpriteFrame(spriteFrame, CIRCLE_FILENAME);
 				}
 				protocol.circle = Sprite::createWithSpriteFrame(spriteFrame);
+				protocol.circle->setVisible(false);
 				protocol.circle->setOpacity(0);
 				this->addChild(protocol.circle, 1);
 
@@ -290,6 +295,7 @@ namespace Pyro
 
 				protocol.surface = Floreto::NinePatchSprite::createWithSpriteFrame(spriteFrame, insets);
 
+				protocol.surface->setVisible(false);
 				protocol.surface->setOpacity(0);
 				protocol.surface->setPosition(size.width / 2, size.height / 2);
 				this->addChild(protocol.surface, 0);

@@ -20,9 +20,7 @@ LOCAL_SRC_FILES := \
 	Pyro\Components\Helpers\MoverButton.cpp \
 	Pyro\Components\Helpers\NormalRectangle.cpp \
 	Pyro\Components\Helpers\RoundedRectangle.cpp \
-	Pyro\Shadow\Blur.cpp \
 	Pyro\Shadow\ShadowLayer.cpp \
-	Pyro\Shadow\ShadowSprite.cpp \
 	Pyro\Common.cpp
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/..

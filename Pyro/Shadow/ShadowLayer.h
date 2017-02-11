@@ -1,5 +1,5 @@
-#ifndef __PYRO_SHADOW_SHADOWLAYER_H__
-#define __PYRO_SHADOW_SHADOWLAYER_H__
+#ifndef __PYRO_SHADOW_SHADOWLAYERNEW_H__
+#define __PYRO_SHADOW_SHADOWLAYERNEW_H__
 
 #include <cocos2d.h>
 
@@ -9,14 +9,16 @@ namespace Pyro
 	namespace Shadow
 	{
 
-		class ShadowSprite;
 		struct ShadowConfig;
 
 		// Represents the shadow layer of a paper components.
 		// THIS CLASS IS FOR INTERNAL USE ONLY
-		class ShadowLayer : public cocos2d::Node
+		class ShadowLayer : public cocos2d::SpriteBatchNode
 		{
-			typedef cocos2d::Node Super;
+			typedef cocos2d::SpriteBatchNode Super;
+
+		protected:
+			class PseudoNode;
 
 		public:
 			static ShadowLayer * create(const cocos2d::Size &size, int depth);
@@ -28,6 +30,8 @@ namespace Pyro
 			ShadowLayer(void);
 			virtual ~ShadowLayer(void);
 
+			virtual void onExit(void) override;
+			virtual void update(float dt) override;
 			virtual void setContentSize(const cocos2d::Size &size) override;
 
 		protected:
@@ -40,8 +44,9 @@ namespace Pyro
 
 		protected:
 			int currentDepth;
-			ShadowSprite *topShadow;
-			ShadowSprite *bottomShadow;
+			PseudoNode *topShadow;
+			PseudoNode *bottomShadow;
+			bool animating;
 
 		protected:
 			static const int MAX_SHADOW_CONFIG;
@@ -54,4 +59,4 @@ namespace Pyro
 
 } //namespace Pyro
 
-#endif//__PYRO_SHADOW_SHADOWLAYER_H__
+#endif//__PYRO_SHADOW_SHADOWLAYERNEW_H__
