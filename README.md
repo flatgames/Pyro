@@ -9,12 +9,10 @@ This library depends on cocos2d-x version 3.0 and over.
 * Put the library directory in the same parent directory of *cocos2dx* library, along with *Classes*, *proj.android*, etc.
 * Copy all files in library Resources directory to application Resources directory. These files are used to create UI elements.
 * In `AppDelegate.cpp`, include the following file:
-```
-#!c++
+```c++
 #include <Pyro/Common.h>
 ```
 * In `AppDelegate::applicationDidFinishLaunching`, put the following line before creating the scene:
-```
-#!c++
+```c++
 Pyro::Common::initResources();
 ```
